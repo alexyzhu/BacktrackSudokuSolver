@@ -59,9 +59,15 @@ def printSolved(sgrid):
 
 
 def main():
-    gridFile = input("Enter Input File: ")
-    ogridFile = open(gridFile)
-    sgrid = []
+    while True:
+        gridFile = input("Enter Input File: ")
+        try:
+            ogridFile = open(gridFile)
+            break
+        except Exception:
+            print("Error Opening File, Please Try Again\n")
+
+    sgrid = []   # initialize grid
 
     for row in ogridFile:
         row = row.split()
